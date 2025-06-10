@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildevisning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+        <nav>
+    <section>
+        <a href="index.html"> <img class="logo" src="bilder/Haugom_Visuals.jpg" alt=""></a>
+     
+    </section>
+    <div class="nav-links">
+        <a href="index.html">Hjem</a>
+        <a href="bilder.html">Bilder</a>
+        <a href="omMeg.html">Om meg</a>
+        <a href="">kontakt meg</a>
+    </div>
+</nav>
+    </header>
+    <main class="bilde-main">
+        <div class="bilde-flex">
+            <div id="bilde-container"></div>
+            <div class="bilde-info" id="bilde-info">
+                <h2>Om bildet</h2>
+                <p id="bilde-beskrivelse">Alle bildene du ser på denne siden er tatt av meg, Sondre Haugom, og er resultatet av min lidenskap for å fange øyeblikk, stemninger og detaljer som ofte går ubemerket i hverdagen. Jeg bruker et Nikon D5100 DSLR-kamera sammen med en AF-S NIKKOR 70–300mm f/4.5–5.6G telezoom-linse, som gir meg fleksibilitet til både nærbilder og landskap. Kameraet lar meg jobbe med lys og dybde på en måte som gir bildene mine karakter og personlighet – enten det er portretter, natur, dyr eller gatefoto.</p>
+            </div>
+        </div>
+        <a id="download-link" href="#" download class="last-ned-link">Last ned bilde</a>
+    </main>
+    <script>
+      // Hent bilde-navn fra URL
+      const params = new URLSearchParams(window.location.search);
+      const bilde = params.get('bilde');
+      // Legg til beskrivelser her
+      if (bilde) {
+        document.getElementById('bilde-container').innerHTML =
+        `<img src="bilder/${bilde}" alt="Bilde" class="bilde-visning">`;
+        document.getElementById('download-link').href = `bilder/${bilde}`;
+        document.getElementById('bilde-beskrivelse').textContent =
+        beskrivelser[bilde] || '';
+      } else {
+        document.getElementById('bilde-container').innerHTML = "<p>Fant ikke bilde.</p>";
+        document.getElementById('download-link').style.display = "none";
+        document.getElementById('bilde-info').style.display = "none";
+      }
+    </script>
+    <footer>
+      <p>
+            &copy; 2025 Haugom Visuals. Alle rettigheter reservert.
+        </p>
+    </footer>
+</body>
+</html>

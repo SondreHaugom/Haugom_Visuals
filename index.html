@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haugom Visuals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+    <section>
+        <a href="index.html"> <img class="logo" src="bilder/Haugom_Visuals.jpg" alt=""></a>
+     
+    </section>
+    <div class="nav-links">
+        <a href="index.html">Hjem</a>
+        <a href="bilder.html">Bilder</a>
+        <a href="omMeg.html">Om meg</a>
+        <a href="">kontakt meg</a>
+    </div>
+</nav>
+    </header>
+<main>
+    <div class="forside_info">
+        <h1>Haugom Visuals</h1>
+        <p>Velkommen til Haugom Visuals, din kilde for fantastiske bilder og videoer.</p>  
+    </div>
+
+
+<script>
+const imageList = [
+    "bilder/_DSC2140_edited.jpg",
+    "bilder/_DSC2117_edited.jpg",
+    "bilder/_DSC1980_edited.jpg",
+    "bilder/_DSC2057_edited.jpg",
+    "bilder/_DSC2117_edited.jpg",
+    "bilder/_DSC2069_edited.jpg",
+];
+
+// Forhåndslast alle bilder
+const preloadedImages = [];
+imageList.forEach(src => {
+    const img = new Image();
+    img.src = src;
+    preloadedImages.push(img);
+});
+
+let currentIndex = 0;
+const mainElement = document.querySelector("main");
+
+function setMainBackground(index) {
+    mainElement.style.backgroundImage = `url('${imageList[index]}')`;
+}
+
+setMainBackground(currentIndex);
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % imageList.length;
+    setMainBackground(currentIndex);
+}, 3000);
+</script>
+
+
+</main>
+<main>
+    <p>
+        <strong>Nyeste bildene:</strong>
+    </p>
+         <section class="gallery-grid_forside">
+  <div class="bildehenvisning_forside">
+    <a href="bildehenvisning.html?bilde=_DSC2108_edited.jpg">
+      <img class="bilder_forside" src="bilder/_DSC2108_edited.jpg" alt="">
+    </a>
+  </div>
+  <div class="bildehenvisning_forside">
+    <a href="bildehenvisning.html?bilde=_DSC2140_edited.jpg">
+      <img class="bilder_forside" src="bilder/_DSC2140_edited.jpg" alt="">
+    </a>
+  </div>
+  <div class="bildehenvisning_forside">
+    <a href="bildehenvisning.html?bilde=_DSC2069_edited.jpg">
+      <img class="bilder_forside" src="bilder/_DSC2069_edited.jpg" alt="">
+    </a>
+  </div>
+  
+</section>
+</main>
+
+<!-- ...eksisterende kode... -->
+    <footer>
+        <p>
+            &copy; 2025 Haugom Visuals. Alle rettigheter reservert.
+        </p>
+    </footer>   
+</body>
+</html>
