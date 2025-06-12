@@ -8,8 +8,6 @@ Enkel navigasjon
 
 Visning av mine favorittbilder
 
-📸 Besøk nettsiden
-Du kan se siden live her: [legg inn lenke til hjemmesiden din]
 
 🤝 Bidrag
 Har du forslag til forbedringer eller ønsker å bidra? Ta gjerne kontakt eller send inn en pull request!
